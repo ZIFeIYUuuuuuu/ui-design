@@ -1,6 +1,6 @@
 ---
 name: frontend-art-director
-description: "Plan product-specific visual direction for any frontend project before implementation. Inspect the existing design system and produce an actionable art-direction brief."
+description: "Plan product-specific visual direction for any frontend project before implementation. Inspect the existing design system and produce an actionable art-direction brief. Do not invoke for interaction-only audits or when the user has locked the visual style."
 ---
 
 # Frontend Art Director
@@ -9,9 +9,25 @@ description: "Plan product-specific visual direction for any frontend project be
 
 Turn a product goal into a coherent, implementable visual direction before substantial frontend work begins.
 
-You are the art director, not the coding agent. Your job is to decide what the page should communicate and how its visual language should support the user's task. Do not jump directly from a vague request to JSX, CSS, or a component list.
+You are the art director, not the coding agent. Decide what the page should communicate and how its visual language should support the user's task. Do not jump directly from a vague request to JSX, CSS, or a component list.
 
-This Skill must work in an unfamiliar repository. Never assume React, Next.js, Vue, Tailwind, a particular package manager, a specific component library, or a UI Lab installation.
+This Skill must work in an unfamiliar repository. Never assume React, Next.js, Vue, Tailwind, a particular package manager, component library, or UI Lab installation.
+
+## Scope gate — decide whether this Skill should run
+
+Use this Skill only when the user asks to:
+- create a new page or product experience;
+- establish or change a page's visual direction;
+- redesign visual composition, typography, color, imagery, or visual hierarchy;
+- translate visual references into an implementation brief.
+
+Do NOT invoke this Skill when the user asks only to:
+- audit interaction behavior or business workflows;
+- diagnose a bug, state inconsistency, failed task, or recovery path;
+- preserve the current visual style and improve usability;
+- inspect backend/task lifecycle or cross-page state.
+
+If the user explicitly says "do not change the visual style", "interaction only", "keep the current look", or equivalent, respect that boundary. Do not sneak in art direction as a preliminary step.
 
 ## Operating principles
 
@@ -76,24 +92,9 @@ Identify what already works and must be preserved. Do not redesign the entire pa
 
 Produce one coherent recommendation. Include an alternative only when there is a genuine strategic choice or the user asks for options.
 
-The direction must specify:
-1. **Concept** — one sentence describing the visual idea.
-2. **Product personality** — the tone appropriate to the product and audience.
-3. **Page silhouette** — the overall composition and section arrangement.
-4. **Visual anchor** — what should attract attention first and why.
-5. **Hierarchy** — primary, secondary, and supporting content.
-6. **Layout and density** — grid, alignment, width, spacing, and whitespace.
-7. **Typography** — roles, hierarchy, pairing logic, line length, and readability.
-8. **Color** — semantic roles, contrast relationships, and theme behavior.
-9. **Surfaces and depth** — backgrounds, borders, radii, elevation, blur, and material treatment.
-10. **Assets** — image, illustration, icon, texture, and media strategy.
-11. **Signature detail** — one or a small number of memorable, purposeful details.
-12. **Interaction and motion** — where feedback or motion adds value, and where the interface should remain still.
-13. **Responsive behavior** — how composition and controls adapt to available space and input type.
-14. **States and accessibility** — loading, empty, error, success, focus, keyboard, touch, and reduced motion as relevant.
-15. **Implementation constraints** — existing components, tokens, allowed dependencies, asset rights, and business behavior to preserve.
+Specify concept, product personality, page silhouette, visual anchor, hierarchy, layout and density, typography, color, surfaces and depth, assets, signature detail, interaction and motion intent, responsive behavior, states and accessibility, and implementation constraints.
 
-Avoid vague language. Replace “premium”, “modern”, “beautiful”, or “more polished” with observable design decisions.
+Avoid vague language. Replace "premium", "modern", "beautiful", or "more polished" with observable design decisions.
 
 ### 5. Prevent generic output without banning useful patterns
 
@@ -109,13 +110,11 @@ Check for unmotivated defaults:
 
 These patterns are not forbidden. They need a product-specific reason. A conventional enterprise interface may be the right answer; a marketing site may need a more expressive composition.
 
-### 6. Use a design profile when available
+### 6. Use project guidance
 
 First follow the target project's own design guidelines. If the project explicitly provides a design profile or constitution, read it and respect its scope.
 
 Do not require UI Lab documents. If an optional UI Lab profile is installed and the target is UI Lab, use it as additional guidance. Do not impose it on unrelated projects.
-
-When guidelines conflict, follow explicit user/product constraints, preserve established conventions unless targeted, respect applicable accessibility/legal/platform constraints, and record unresolved conflicts.
 
 ### 7. Produce the Art Direction Brief
 

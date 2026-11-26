@@ -1,128 +1,129 @@
 ---
 name: frontend-design-loop
-description: "Coordinate art direction, authorized frontend implementation, independent visual critique, focused refinement, and browser re-verification across any framework."
+description: "Coordinate frontend art direction, visual review, interaction/product audit, authorized implementation, and verification. Select only the workflow mode the user requested; respect visual locks and high-risk operation boundaries."
 ---
 
 # Frontend Design Loop
 
 ## Mission
 
-Coordinate a disciplined design workflow with distinct responsibilities:
+Coordinate a disciplined frontend improvement workflow. Select the correct mode before acting; do not force every task through visual redesign.
 
-1. Art Director defines the visual intent.
-2. Generator implements the page.
-3. Visual Critic independently evaluates the rendered result.
-4. Generator fixes the most consequential issues.
-5. The Critic re-checks the result and the workflow stops when improvement plateaus or acceptance criteria are met.
+Supported modes:
+- **VISUAL_DESIGN** — establish visual direction, implement, critique, refine, verify.
+- **INTERACTION_IMPROVEMENT** — preserve current visual direction, audit interactions and journeys, implement approved behavior fixes, re-audit.
+- **FULL_PRODUCT_UX** — combine visual and interaction review when the user asks for both.
+- **AUDIT_ONLY** — inspect and report without modifying code.
 
-The loop is framework-agnostic. It must adapt to the target project's existing tools, scripts, architecture, and design system. It does not assume UI Lab, React, Next.js, Tailwind, pnpm, Playwright, or a specific agent runtime.
+## Required Skills and routing
 
-## Required Skills and fallback
+- `frontend-art-director`: only for VISUAL_DESIGN or when the user explicitly asks for a new visual direction.
+- `frontend-visual-critic`: visual review, page-level interaction review, or product journey review using the mode specified in its instructions.
 
-Prefer these companion Skills when installed:
-- `frontend-art-director`
-- `frontend-visual-critic`
+Do not invent or require a fourth Skill. The existing Visual Critic contains the interaction/product audit procedure.
 
-If either is unavailable, follow its relevant workflow in this Skill and disclose the limitation. Do not claim a separate agent was used unless the environment actually supports and starts one.
+If the companion Skill is unavailable, disclose the limitation and follow only the relevant method. Do not claim independent agents or tool capabilities that were not actually used.
 
 ## Phase 0 — Scope, safety, and baseline
 
-1. Confirm the target project, page, task, user constraints, and expected outcome.
-2. Inspect repository instructions and the current Git branch/status if available.
-3. Identify the framework, package manager, scripts, existing design system, components, assets, and test tools.
-4. Do not overwrite unrelated user changes or discard uncommitted work.
-5. For an existing page, capture its baseline screenshots and behavior before changing it.
-6. Record how this workflow's changes can be reverted.
-7. Establish the exact files and behaviors that must remain unchanged.
+1. Confirm product, environment, user goal, roles, target routes, and requested mode.
+2. Read repository instructions and inspect Git branch/status when available.
+3. Identify framework, scripts, architecture, design system, API boundaries, data stores, browser tools, and tests.
+4. Record explicit constraints: visual lock, read-only, no payment, no credit use, no deletion, no production writes, etc.
+5. Capture relevant baseline screenshots and behavior when available.
+6. Preserve unrelated user changes and establish rollback.
+7. If the user asked only for an audit, remain read-only.
 
-If the user has not authorized code changes, stop after the brief and review plan. Do not infer permission to write from a request to analyze or critique.
+Do not ask the user to repeat constraints they have already stated.
 
-## Phase 1 — Art Direction
+## Phase 1 — Choose the correct planning path
 
-1. Inspect the product, audience, content, task, brand, design tokens, existing pages, and references.
-2. Create an Art Direction Brief using the companion Skill or its template.
-3. Define composition, visual anchor, hierarchy, typography, color roles, surfaces, assets, signature detail, interaction intent, responsive behavior, accessibility considerations, and implementation constraints.
-4. Preserve established design conventions unless they are explicitly the target of the redesign.
-5. Avoid generic AI defaults unless justified by the product.
-6. Ask only when a material product, brand, or behavior decision cannot be reasonably inferred.
+### VISUAL_DESIGN
+Use Art Director to inspect the project and create an actionable visual brief. Preserve existing business semantics and established design-system conventions unless explicitly targeted.
 
-## Phase 2 — Generate
+### INTERACTION_IMPROVEMENT
+Do not invoke Art Director. Use Visual Critic in INTERACTION_ONLY or PRODUCT_JOURNEY mode. Map the relevant user journeys, state transitions, errors, persistence, recovery, and side effects. Explicitly list visual elements and business behavior that must remain unchanged.
 
-1. Use the project's existing coding agent and established framework.
-2. Reuse suitable components, tokens, dependencies, and conventions.
-3. Use advanced effects only when they serve the user task and pass compatibility checks.
-4. Preserve business logic, data flow, routes, permissions, and existing behavior.
-5. Implement the smallest coherent solution that fulfills the brief.
-6. Start the application using the actual project instructions and scripts; never guess the command.
-7. Capture the first rendered state.
+### FULL_PRODUCT_UX
+Use Art Director only if a new or changed visual direction is actually requested. Run visual and interaction reviews as separate workstreams and keep their findings distinct.
 
-## Phase 3 — Independent critique
+### AUDIT_ONLY
+Inspect and report. Do not modify code, configuration, data, or accounts.
 
-1. Run the Visual Critic in a separate agent/session if supported.
-2. Inspect the rendered result before reading the generator's self-review.
-3. Review desktop and mobile, full-page composition, key scroll areas, primary interactions, and relevant states.
-4. Return a verdict, hard-gate status, preserved strengths, up to three high-impact findings, exact evidence, user impact, concrete corrections, regression checks, and evidence gaps.
-5. The critic is read-only and must not edit source files.
+## Phase 2 — Audit before fixing
 
-If independent context is unavailable, use a fresh review invocation and mark independence as limited. Never simulate independence by merely renaming the same generator role.
+For interaction/product tasks:
+1. Inventory relevant routes, features, roles, and business objects.
+2. Map user journeys from entry to successful completion.
+3. Execute scenarios and record expected versus actual results.
+4. Inspect state sources and async lifecycle.
+5. Trace cross-layer inconsistencies through request IDs, events, persistence, and UI state where evidence is available.
+6. Separate observed symptoms, verified root causes, likely causes, and hypotheses.
+7. Build a coverage matrix; untested scenarios are not passed.
+8. Identify side effects and explicitly prohibited tests.
 
-## Phase 4 — Focused refinement
+Do not jump from symptom to code change. Do not propose a backend fix without evidence.
 
-1. Fix the highest-impact findings first.
-2. Address causes, not symptoms.
-3. Preserve strengths identified by the Critic.
-4. Do not add decorative effects unless the review establishes a real benefit.
-5. Keep the diff focused and avoid unrelated refactoring.
-6. Re-run relevant functional and interaction tests.
-7. Capture the same viewports and states again.
+## Phase 3 — Generate or fix
 
-## Phase 5 — Re-evaluate
+Only when implementation is authorised:
+1. Use the project's existing coding agent and tools.
+2. Implement the smallest coherent changes tied to verified findings.
+3. Preserve business logic, data flow, permissions, routes, visual style locks, and unrelated behavior.
+4. For state inconsistencies, trace the source of truth, operation/task IDs, event ordering, persistence, and refresh behavior before changing state logic.
+5. Do not add retry behavior until original acceptance, idempotency, and side effects are verified.
+6. Do not run payments, purchases, subscriptions, credit-consuming operations, publishing, messaging, deletion, or irreversible actions without explicit approval for that exact test.
 
-1. Compare the new result with the baseline and previous round using the same content, data, viewport, and state.
-2. Ask the Critic to mark each finding FIXED / PARTIALLY_FIXED / UNRESOLVED / REGRESSED.
-3. Check whether new regressions were introduced.
-4. Record performance and accessibility evidence separately from visual judgement.
-5. Continue only when a material improvement is expected.
+## Phase 4 — Independent verification
 
-## Iteration budget and stop rules
+- Visual changes: use Visual Critic in VISUAL_ONLY or FULL_PRODUCT_UX mode with current browser evidence.
+- Interaction changes: use Visual Critic in INTERACTION_ONLY or PRODUCT_JOURNEY mode and replay the exact journey and recovery scenarios.
+- Full product UX: keep visual and interaction verification separate.
+- Inspect actual behavior before reading the generator's self-review.
+- Record browser, network, server, code, and test evidence separately.
+- Mark each finding FIXED / PARTIALLY_FIXED / UNRESOLVED / REGRESSED.
 
-- Default: at most 3 critique/refinement rounds after the first implementation.
-- Absolute maximum: 5 rounds, only when each round makes measurable or clearly observable progress.
-- Fix at most 3 high-impact findings per round.
-- Stop when no unresolved critical/high issue remains and no material issue remains within the agreed scope.
-- Stop after two consecutive rounds without meaningful improvement.
-- Stop and report if a fix causes regressions or the evaluator lacks evidence.
-- Do not chase a subjective perfect score indefinitely.
+## Phase 5 — Focused refinement
 
-## Quality gates
+1. Fix the highest-impact verified issues first.
+2. Preserve explicit visual locks and listed strengths.
+3. Address root causes only when verified; otherwise request missing diagnostic evidence or make only a safe, clearly scoped UX improvement.
+4. Re-run relevant regression tests.
+5. Repeat the same task with comparable starting conditions.
+6. Stop if fixes cause regressions or evidence is insufficient.
 
-Assess visual quality, interaction and business correctness, keyboard and focus, touch alternatives, reduced motion, responsive behavior, runtime and asset loading, performance, and licensing separately. A high visual score cannot compensate for a failed hard gate.
+## Iteration budget
 
-## Approval and write boundaries
+- Default: at most 3 refinement rounds.
+- Maximum: 5 only when each round makes meaningful progress.
+- Fix at most 3 high-impact issues per implementation round.
+- Do not limit a comprehensive audit's finding register to three; summarise the top three separately.
+- Stop after two rounds without meaningful improvement.
+- Do not chase subjective perfection.
 
-- Only implement when the user has requested or approved code changes.
-- Work only in the authorized repository and branch.
+## Safety and ownership
+
+- Code changes require explicit user authorisation.
+- Work only in the authorised repository and branch.
 - Do not push, merge, deploy, or perform irreversible actions unless explicitly requested.
-- Preserve unrelated user changes.
-- Show the diff and test results.
-- Provide a rollback path for significant changes.
+- Preserve unrelated changes.
+- Show the diff, tests, and rollback path.
+- Never expose credentials, tokens, or private user content in reports.
+- Visual Critic remains read-only.
 
 ## Final deliverables
 
-1. Art Direction Brief.
-2. Summary of implementation and files changed.
-3. Critique report for each round.
-4. Before/after screenshots at identical viewports and states, when browser tools allow.
-5. Functional, responsive, accessibility, and performance results with untested scope.
-6. Final verdict: PASS / PARTIAL / FAIL.
-7. Remaining trade-offs and known issues.
-8. Diff, commit, and rollback information when applicable.
+For visual work: Art Direction Brief, before/after screenshots, visual critique, and regression results.
+
+For interaction/product work: route and feature inventory, journey maps, coverage matrix, complete prioritised findings, verified causes versus hypotheses, side-effect exclusions, and regression results.
+
+For implementation: files changed, diff, tests, remaining unknowns, and PASS / PARTIAL / FAIL verdict.
 
 ## Failure modes
 
-- No browser: do not claim visual verification; report INSUFFICIENT_EVIDENCE or code-only findings.
+- No browser: do not claim visual or interaction verification.
+- No network/server access: do not claim backend root cause.
 - No independent agent: disclose limited independence.
-- No user write authorization: remain read-only.
-- Project brief conflicts with established brand or business constraints: preserve higher-priority requirements and document the conflict.
-- Critique is vague: request observable evidence and a concrete change.
-- Score improves but usability regresses: reject or revert the iteration.
+- No write authorisation: remain read-only.
+- Unknown operation acceptance or cost: do not retry.
+- User locks visual style: do not invoke Art Director or redesign visuals.

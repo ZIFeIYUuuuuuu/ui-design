@@ -2,50 +2,39 @@
 
 ## 1. Package goal
 
-Provide three reusable Agent Skills that can be installed into unrelated frontend repositories without importing UI Lab's project structure or design preferences.
-
-The package is intentionally small: three Skills, their references, installation helpers, and one optional design profile.
+Provide three reusable Agent Skills for frontend visual design and product interaction quality. The package remains framework-agnostic and does not require UI Lab.
 
 ## 2. Responsibility boundaries
 
-| Skill | Input | Output | Writes product code? |
-|---|---|---|---|
-| frontend-art-director | Product goal, project context, references | Art Direction Brief | No |
-| frontend-visual-critic | Rendered page, user task, optional brief | Evidence-backed critique | No |
-| frontend-design-loop | User-authorized task, project, available tools | Brief, implementation, bounded critique/refinement, final report | Yes, only after authorization |
+| Skill | Responsibility | Writes product code? |
+|---|---|---|
+| frontend-art-director | Visual direction and actionable brief | No |
+| frontend-visual-critic | Visual review, page interaction review, or product-journey audit selected by explicit mode | No |
+| frontend-design-loop | Route the requested workflow, coordinate implementation and verification | Yes, only with user authorisation |
 
-The three Skills are independent folders. Installing one does not require installing the others. The Design Loop can fall back to the relevant workflow if a companion Skill is unavailable, but must disclose that limitation.
+The Visual Critic contains the product-journey audit procedure. Do not create a separate fourth Skill for this capability.
 
-## 3. Project adaptation
+## 3. Review modes
 
-At runtime, Skills inspect:
-- Repository instructions.
-- Framework and build system.
-- Package manager and actual scripts.
-- Existing design system and tokens.
-- Components, assets, and fonts.
-- Browser and test tools.
-- Brand and accessibility requirements.
+- VISUAL_ONLY
+- INTERACTION_ONLY
+- PRODUCT_JOURNEY
+- FULL_PRODUCT_UX
 
-They must not hard-code framework, command, route, browser, or component-library assumptions.
+The user's scope and constraints determine the mode. A visual lock suppresses Art Director. A whole-product request requires route/feature inventory, journey maps, scenario coverage, and a complete findings register.
 
-## 4. Optional profiles
+## 4. Project adaptation
 
-A profile adds domain-specific principles and source knowledge without changing the generic Skill contract.
+Inspect repository instructions, framework/build system, package manager/scripts, design system/tokens, components/assets, browser/test tools, API boundaries, and product constraints. Do not hard-code framework or backend assumptions.
 
-The included UI Lab profile is opt-in. Other projects can add their own profile document and reference it from project instructions. The generic Skills should continue to work if no profile exists.
+## 5. Evidence and safety
 
-## 5. Tool adaptation
+Distinguish browser, network, server, code, test, inference, and unknown evidence. Do not claim backend root cause without direct evidence. High-risk actions are not executed by default. Unknown async operation acceptance means no blind retry.
 
-Browser inspection uses the target environment's available browser or test tools. If no browser is available, the Critic downgrades to code-only review and cannot claim visual verification.
+## 6. Ownership
 
-The package does not install dependencies or start servers blindly. It inspects project scripts and asks for permission before adding tools or changing project configuration.
-
-## 6. Safety and ownership
-
-- The Critic is read-only.
-- The Art Director produces a brief, not code.
-- The Design Loop writes only when the user has requested or approved implementation.
-- Existing user changes must be preserved.
+- Art Director produces a brief, not code.
+- Visual Critic is read-only.
+- Design Loop writes only after user authorisation.
+- Preserve unrelated user changes.
 - Push, merge, deploy, and irreversible actions require explicit permission.
-- Scores are advisory and cannot override hard-gate failures or human approval.

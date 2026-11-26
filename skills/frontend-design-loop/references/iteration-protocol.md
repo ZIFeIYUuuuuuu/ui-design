@@ -1,85 +1,54 @@
-# Universal Frontend Design Loop
+# Frontend Design Loop — Mode and Evidence Protocol
 
-## Purpose
+## Select the task mode first
 
-A framework-agnostic workflow connecting visual direction, implementation, independent critique, focused refinement, and re-verification.
+| User request | Mode | Art Director | Visual Critic |
+|---|---|---|---|
+| Create or redesign a page | VISUAL_DESIGN | Yes | VISUAL_ONLY after render |
+| "Keep visual style; improve interaction" | INTERACTION_IMPROVEMENT | No | INTERACTION_ONLY / PRODUCT_JOURNEY |
+| Audit whole product UX | AUDIT_ONLY or FULL_PRODUCT_UX | Only if visual audit requested | PRODUCT_JOURNEY |
+| Visual and business workflow redesign | FULL_PRODUCT_UX | If visual direction changes | Separate visual and journey passes |
 
-## Roles
+Explicit user constraints override default routing. Never invoke Art Director for an interaction-only request with a visual lock.
 
-| Role | Responsibility | May edit product code? |
-|---|---|---|
-| Art Director | Define visual intent and implementation constraints | No |
-| Generator | Implement the brief in the existing project | Yes, only with user authorization |
-| Visual Critic | Inspect rendered pages and report evidence-backed issues | No |
-| Project owner | Define product intent and accept the result | Approval authority |
+## Product interaction audit sequence
 
-Use a separate agent context for the Critic when supported. Otherwise disclose that independence is limited.
+`Scope → Product inventory → Journey map → Scenario plan → Real browser execution → State/data tracing → Findings → Coverage report`
 
-## Pipeline
+A route inventory is not a journey map. A page visit is not a workflow test. A button click is not proof of business completion.
 
-`Baseline → Art Direction Brief → Generate → Browser Render → Independent Critique → Focused Fixes → Re-render → Re-critique → Final Gate`
+## Evidence classification
 
-## Baseline and comparability
+- BROWSER_OBSERVATION: current visible behavior.
+- NETWORK_EVIDENCE: current request/response/event.
+- SERVER_EVIDENCE: authorised current server/log/database evidence.
+- CODE_FACT: direct source evidence.
+- TEST_EVIDENCE: named fresh or historical test.
+- INFERENCE: reasoned interpretation.
+- UNKNOWN: not established.
 
-For existing pages, capture the original state before changes. Keep viewport, content, data, browser settings, and interaction state comparable across rounds.
+## Root-cause discipline
 
-For a full browser review, aim for:
-- Desktop: 1440 × 1000 CSS px or nearest practical size.
-- Mobile: 390 × 844 CSS px or nearest practical size.
-- Initial viewport and full page.
-- A meaningful scrolled region.
-- Primary and secondary interactions.
-- Keyboard path for an important task.
-- Reduced-motion state when motion is used.
+Use OBSERVED_SYMPTOM, VERIFIED_ROOT_CAUSE, LIKELY_CAUSE, UNCONFIRMED_HYPOTHESIS, or UNKNOWN. A root cause is VERIFIED only with direct evidence. If only the browser is available, report the symptom and what evidence is missing.
 
-These are sampling targets, not universal breakpoints. Adapt them to the product and available devices.
+## Safe retries
 
-## Critique contract
+Do not retry an asynchronous or paid operation until request acceptance, operation identity, pending/running status, persistence, and side effects are understood. If uncertain, reconcile status first. Payments, paid credits, publication, messaging, deletion, and irreversible actions are out of scope unless specifically authorised.
 
-Each round returns:
-- Verdict and hard-gate status.
-- What works and must be preserved.
-- Up to three high-impact findings.
-- Exact screenshot region or source evidence.
-- User impact and concrete correction.
-- Required regression checks.
-- Evidence gaps.
+## Finding completeness
 
-The Critic is read-only.
+A comprehensive audit provides:
+- full finding register, not merely three examples;
+- severity and confidence;
+- reproduction steps and expected/actual behavior;
+- evidence and affected journey;
+- cause classification;
+- smallest safe recommendation;
+- regression plan;
+- tested / untested / blocked coverage.
 
-## Iteration budget
+The executive summary may highlight the top three, but must not hide the remaining findings.
 
-- Default maximum: 3 refinement rounds.
-- Absolute maximum: 5, only with meaningful progress.
-- Fix at most 3 high-impact issues per round.
-- Stop after two rounds without meaningful improvement.
-- Stop when agreed hard gates pass and no material finding remains.
-- Revert regressions rather than accumulating patches.
-- Scores are optional and only valid with adequate browser evidence.
+## Stop rules
 
-## Final gates
-
-- Visual direction and composition.
-- Typography and hierarchy.
-- Interaction and motion.
-- Keyboard and focus.
-- Touch alternatives.
-- Responsive behavior.
-- Reduced motion.
-- Runtime and asset loading.
-- Performance.
-- License and source.
-- Functional regression.
-
-## Reporting
-
-Keep separate:
-- Art Direction Brief.
-- Generator implementation notes.
-- Visual Critic reports.
-- Automated test results.
-- Browser observations.
-- Performance measurements.
-- Human owner approval.
-
-A screenshot is not an interaction test. A passing E2E test is not a design-quality verdict. An AI score is not owner approval.
+Do not keep browsing after the declared scope is covered merely to inflate activity. Do not claim full coverage when routes or scenarios remain untested. State the remaining gaps and the safest next diagnostic step.

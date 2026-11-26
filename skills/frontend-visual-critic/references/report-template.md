@@ -1,107 +1,123 @@
-# Visual Critique — [Page / Component]
+# Frontend Review Report — [Product / Page / Journey]
 
-## 1. Review Metadata
+## 1. Review Scope
 - Review ID:
 - Date:
+- Product:
+- Environment: LOCAL / STAGING / PRODUCTION
 - Repository / branch / commit:
-- Route:
-- Product task:
-- Art Direction Brief:
-- Browser / version:
-- Desktop viewport:
-- Mobile viewport:
-- Review method: FULL_BROWSER / BROWSER_ASSISTED / CODE_ONLY
-- Independent evaluator context: YES / LIMITED / NO
-- Scope limitations:
+- Review mode: VISUAL_ONLY / INTERACTION_ONLY / PRODUCT_JOURNEY / FULL_PRODUCT_UX
+- User role / permissions:
+- Routes and features in scope:
+- Explicit constraints (e.g. visual style locked):
+- Browser / version / viewport / input mode:
+- Evidence sources available:
+- Explicit exclusions (payments, paid credits, destructive actions, etc.):
 
-## 2. Verdict
+## 2. Verdict and Coverage
 - Verdict: KEEP / IMPROVE / REWORK / BLOCKED / INSUFFICIENT_EVIDENCE
-- Confidence: HIGH / MEDIUM / LOW
+- Confidence:
+- Routes/features discovered:
+- Routes/features inspected:
+- Journeys planned:
+- Journeys executed:
+- Scenarios: PASS / FAIL / BLOCKED / NOT_TESTED / NOT_APPLICABLE
 - One-sentence conclusion:
 
-## 3. What Works — Preserve
-- Composition:
-- Typography:
-- Color and surfaces:
-- Interaction:
-- Product-specific strengths:
+## 3. Product and Route Inventory
+| Area / route | User role | Purpose | Entry point | Next step / exit | Inspected? | Limitation |
+|---|---|---|---|---|---|---|
 
-## 4. Hard Gates
-| Gate | PASS / FAIL / UNKNOWN / N/A | Evidence | Limitation |
-|---|---|---|---|
-| Business task | | | |
-| Keyboard and focus | | | |
-| Touch alternatives | | | |
-| Reduced motion | | | |
-| Responsive usability | | | |
-| Runtime / assets | | | |
-| License / source | | | |
+## 4. Journey Maps (for interaction/product modes)
 
-## 5. Visual Assessment
-| Area | Status | Screenshot region / evidence | Finding |
-|---|---|---|---|
-| Composition and page silhouette | | | |
-| Visual hierarchy | | | |
-| Typography | | | |
-| Color and contrast | | | |
-| Spacing and alignment | | | |
-| Surfaces and depth | | | |
-| Imagery and assets | | | |
-| Section rhythm | | | |
-| Product identity | | | |
+### Journey [ID] — [User goal]
+- User role:
+- Starting condition:
+- Preconditions:
+- Entry point:
+| Step | User action | Expected response | Actual observation | State / evidence |
+|---|---|---|---|---|
+| | | | | |
 
-## 6. Originality / Art Direction
-- Is there a coherent concept?
-- What is product-specific?
-- Which generic patterns are present?
-- What is the signature detail?
-- Does decoration compensate for weak composition?
+- Success condition:
+- Alternative path:
+- Failure path:
+- Recovery path:
+- Persistence / re-entry:
+- Not tested:
 
-## 7. Interaction and Motion
-- Main interaction:
-- Secondary interaction:
-- Feedback:
-- Continuity / interruption:
-- Motion density:
-- Keyboard / touch:
-- Reduced motion:
+## 5. Scenario Coverage
+| Scenario | Planned | Executed | Result | Evidence | Limitation |
+|---|---|---|---|---|---|
 
-## 8. Top Three Findings
+Allowed results: PASS / FAIL / BLOCKED / NOT_TESTED / NOT_APPLICABLE. Never count BLOCKED or NOT_TESTED as PASS.
 
-### [1] [Issue title]
-- Severity:
-- Evidence:
+## 6. State and Cross-Layer Analysis
+| Entity / operation | UI region / layer | Displayed state | Task ID / version | Evidence source | Consistent? |
+|---|---|---|---|---|---|
+
+Map requested, accepted, queued, running, succeeded, failed, cancelled, persisted, rendered, and recoverable states where relevant. Do not invent states that the product does not have.
+
+## 7. Findings — Complete Prioritised Register
+
+### [F-001] [Finding title]
+- Severity: P0 / P1 / P2 / P3
+- Affected role / journey:
+- Classification: OBSERVED_SYMPTOM / VERIFIED_ROOT_CAUSE / LIKELY_CAUSE / UNCONFIRMED_HYPOTHESIS
+- Confidence: HIGH / MEDIUM / LOW
+- Preconditions:
+- Reproduction steps:
+- Expected:
+- Actual:
+- Evidence and timestamp:
 - User impact:
-- Why it weakens the design:
-- Exact recommended change:
-- Regression check:
+- Root cause (only if verified):
+- Hypotheses and evidence needed:
+- Smallest safe recommendation:
+- Side-effect / retry implications:
+- Verification and regression plan:
 
-### [2] [Issue title]
-...
+## 8. Visual Assessment (only for VISUAL_ONLY or FULL_PRODUCT_UX)
+| Area | Status | Screenshot / evidence | Finding |
+|---|---|---|---|
 
-### [3] [Issue title]
-...
+## 9. What Works and Must Be Preserved
+- Existing interactions:
+- Existing visual direction (if relevant):
+- Business behavior:
+- Useful shortcuts / feedback:
+- Other strengths:
 
-## 9. Score (only with sufficient browser evidence)
-| Dimension | Rating 1–5 | Weight | Weighted result | Evidence |
-|---|---:|---:|---:|---|
-| Visual Quality | | 35 | | |
-| Originality / Art Direction | | 25 | | |
-| Interaction Quality | | 25 | | |
-| Craft | | 15 | | |
-| **Total** | | **100** | | |
+## 10. Safety and Side Effects
+- Paid/credit-consuming actions not executed:
+- Destructive/irreversible actions not executed:
+- Operations with unknown acceptance status:
+- Retry safety:
+- Credentials and sensitive data handling:
 
-## 10. Generator Handoff
-- Verdict:
-- Preserve:
-- Must change:
-- Must not add:
-- Priority order:
-- Regression tests:
-- Evidence to capture next round:
+## 11. Recommendations
+| Priority | Finding IDs | Change | Expected user benefit | Risk/dependency | Verification |
+|---|---|---|---|---|---|
 
-## 11. Evidence Gaps
-- Not inspected:
-- Tests not run:
-- Devices / browsers not checked:
+Separate UX recommendations from verified engineering root-cause fixes.
+
+## 12. Regression Plan
+| Test ID | Scenario | Setup | Steps | Expected result | Side-effect guard |
+|---|---|---|---|---|---|
+
+## 13. Evidence Gaps and Limitations
+- Routes not inspected:
+- Journeys not executed:
+- Roles/devices not covered:
+- Network/server/backend evidence unavailable:
+- Historical tests only:
+- Root causes not verified:
 - Remaining unknowns:
+
+## 14. Executive Summary
+- Top three risks:
+- What should be fixed first:
+- What should remain unchanged:
+- What requires engineering investigation:
+- What requires owner approval:
+- Suggested next step:

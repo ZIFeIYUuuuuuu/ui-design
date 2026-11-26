@@ -1,41 +1,27 @@
 # Universal Frontend Design Skills
 
-Three framework-agnostic Agent Skills for planning, reviewing, and improving frontend design in real projects.
+Three framework-agnostic Agent Skills for planning, reviewing, and improving frontend design and product interactions.
 
-- **frontend-art-director** — define a product-specific visual direction before implementation.
-- **frontend-visual-critic** — independently inspect rendered pages and report the highest-impact quality issues.
-- **frontend-design-loop** — coordinate direction, implementation, critique, focused refinement, and re-verification.
+- **frontend-art-director** — define product-specific visual direction before implementation.
+- **frontend-visual-critic** — review visual quality, page-level interactions, or complete product journeys according to an explicit review mode.
+- **frontend-design-loop** — coordinate visual design, interaction improvement, full product UX, or audit-only workflows.
 
-These Skills do not require UI Lab, React, Next.js, Tailwind, Playwright, or any specific component library. They adapt to the tools and conventions already present in the target project.
+The Visual Critic includes interaction and product-journey audit procedures. You do not need a fourth Skill.
 
-## Design principles
+## Core rules
 
-1. Inspect the project before prescribing a style.
-2. Preserve a good existing design system; do not redesign for novelty.
-3. Separate visual direction, implementation, and critique.
-4. Prefer evidence from the rendered page over assumptions from source code.
-5. Distinguish browser observations, code facts, test evidence, inference, and unknowns.
-6. Treat accessibility, responsive behavior, performance, licensing, and business correctness as hard constraints—not optional polish.
-7. A restrained or unchanged design can be the correct result.
-8. Never claim browser verification when no browser was actually used.
-
-## Repository layout
-
-```text
-skills/
-  frontend-art-director/
-  frontend-visual-critic/
-  frontend-design-loop/
-profiles/
-  ui-lab/
-docs/
-scripts/
-.github/workflows/
-```
+1. Choose the review mode before browsing.
+2. Respect a visual lock; do not invoke Art Director for interaction-only work.
+3. Audit user journeys, not only isolated screens.
+4. Separate observed symptoms from verified root causes and hypotheses.
+5. Never recommend blind retries for operations with uncertain acceptance or side effects.
+6. Do not execute payments, paid-credit operations, destructive actions, or irreversible changes by default.
+7. Report coverage: tested, untested, blocked, and not applicable.
+8. Never claim browser or backend verification without current evidence.
+9. Preserve a good existing design system and unrelated business behavior.
+10. A valid result may be no change.
 
 ## Install for Codex
-
-Personal installation (available across projects):
 
 **macOS / Linux**
 ```bash
@@ -47,42 +33,21 @@ Personal installation (available across projects):
 ./scripts/install.ps1 -Destination "$HOME/.agents/skills"
 ```
 
-Project-only installation (run from the target project's root):
-
-```bash
-/path/to/ui-design/scripts/install.sh .agents/skills
-```
-
-After installation, restart or refresh Codex's Skills list if the new Skills do not appear.
-
-## Install manually
-
-Copy the three directories under `skills/` into the Agent Skills directory supported by your host. Codex supports project Skills under `.agents/skills/` and personal Skills under `~/.agents/skills/`. Other hosts may use different discovery paths; see [Compatibility](docs/COMPATIBILITY.md).
-
 ## Use
 
 ```text
 $frontend-art-director
-```
-Use before creating a new page or making a substantial redesign.
-
-```text
 $frontend-visual-critic
-```
-Use after a page has rendered, when you want an independent design review. It is read-only.
-
-```text
 $frontend-design-loop
 ```
-Use when you want the complete generation → critique → refinement → verification process.
 
-See [Usage Guide](docs/USAGE.md), [Installation](docs/INSTALLATION.md), and [Compatibility](docs/COMPATIBILITY.md).
+For interaction-only review, invoke Visual Critic with `Mode: INTERACTION_ONLY`. For a multi-route product audit, use `Mode: PRODUCT_JOURNEY`. For implementation while preserving the existing visual style, use Design Loop with `Mode: INTERACTION_IMPROVEMENT`.
+
+See [Usage](docs/USAGE.md), [Architecture](docs/ARCHITECTURE.md), [Installation](docs/INSTALLATION.md), and [Testing](docs/TESTING.md).
 
 ## Optional UI Lab profile
 
-The optional [UI Lab profile](profiles/ui-lab/PROFILE.md) connects these generic Skills to UI Lab's Design Constitution V2 and its research on Refactoring UI, design-dot, Emil Kowalski, Apple HIG, NN/g, WCAG, GOV.UK, and web.dev.
-
-The profile is not required. Generic Skills work without it and should use the target project's own design guidelines when available.
+The optional [UI Lab profile](profiles/ui-lab/PROFILE.md) adds UI Lab's Design Constitution V2 and research. It is not required for generic projects.
 
 ## License
 

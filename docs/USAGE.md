@@ -1,91 +1,86 @@
 # Usage Guide
 
-## 1. Start with Art Director
+## 1. Art direction before implementation
 
-Use when:
-- Creating a new page.
-- Reworking a page's overall visual direction.
-- A page looks generic and the design intent is unclear.
-- You need to translate reference screenshots into implementation guidance.
-
-Prompt:
+Use only when creating a page or changing its visual direction.
 
 ```text
 $frontend-art-director
 
 Inspect this project and create an actionable Art Direction Brief for [page / task].
-Preserve the existing product identity and working design-system conventions.
-Define composition, hierarchy, typography, color, assets, interaction intent,
-responsive behavior, and implementation constraints. Do not modify code yet.
+Preserve the existing product identity and design-system conventions.
+Do not modify code yet.
 ```
 
-## 2. Use Visual Critic after rendering
-
-Use when:
-- A page is implemented but looks weak or unfinished.
-- You need an independent review before accepting a design.
-- You want to know which issues matter most.
-
-Prompt:
+## 2. Visual-only review
 
 ```text
 $frontend-visual-critic
 
-Review [URL / route] in a real browser if available.
-Inspect desktop and mobile, the full page, key interactions, and relevant states.
-Identify what works and must be preserved, then report at most three
-highest-impact issues with evidence, user impact, exact fixes, and verification.
-Do not modify code. Do not score if browser evidence is insufficient.
+Mode: VISUAL_ONLY.
+Review [URL / route] in a real browser.
+Inspect composition, hierarchy, typography, color, imagery, responsive presentation, and craft.
+Do not audit unrelated product workflows. Do not modify code.
 ```
 
-## 3. Use Design Loop for end-to-end work
+## 3. Interaction-only review — preserve the current visual style
 
-Use when:
-- Building a new page and you want design direction plus iterative improvement.
-- Substantially redesigning an existing page.
-- You want a bounded generate → critique → refine workflow.
+```text
+$frontend-visual-critic
 
-Prompt:
+Mode: INTERACTION_ONLY (or PRODUCT_JOURNEY if multiple routes are involved).
+Visual style is LOCKED. Do not invoke Art Director or suggest aesthetic redesign.
+
+Audit [specific workflow]. Map the user's actions, expected/actual responses, state transitions,
+failure/recovery paths, persistence, and duplicate-action risks. Use real browser evidence.
+Inspect source/network/server evidence where available. Separate symptoms from verified causes.
+Do not perform paid, credit-consuming, destructive, or irreversible actions. Read-only.
+```
+
+## 4. Full product interaction audit
+
+```text
+$frontend-visual-critic
+
+Mode: PRODUCT_JOURNEY.
+Audit the complete relevant product workflows, not just the homepage.
+Inventory routes/features and user roles, map the core journeys, and execute safe scenarios.
+Cover first-time use, returning use, create/edit/save/resume, navigation, async state,
+refresh/re-entry, failures, recovery, and permissions as applicable.
+
+Provide a coverage matrix and complete prioritised findings register.
+Do not infer backend root causes without direct evidence.
+Do not blindly retry operations or perform paid/destructive actions.
+Read-only.
+```
+
+## 5. Interaction improvements with authorised code changes
 
 ```text
 $frontend-design-loop
 
-Improve [page / task] in this project.
-Inspect the project and preserve existing business behavior.
-Create an Art Direction Brief, implement the approved scope, then use an
-independent Visual Critic to inspect the real rendered page.
-Fix the highest-impact issues, re-test, and compare before/after at the same
-viewports. Default to three refinement rounds; stop on plateau.
-Show the diff and report untested cases.
+Mode: INTERACTION_IMPROVEMENT.
+Preserve the current visual style and unrelated business behavior.
+First audit [journey] with frontend-visual-critic in PRODUCT_JOURNEY mode.
+Then implement only approved, evidence-backed fixes.
+Do not add retry behavior until acceptance, idempotency, and side effects are verified.
+Replay the same journey and recovery cases. Show the diff and evidence.
 ```
 
-## 4. Use with an existing design system
+## 6. Full visual and interaction redesign
 
-Tell the Art Director and Critic which files or guidelines define the product's:
-- Brand.
-- Typography.
-- Color and spacing tokens.
-- Components.
-- Accessibility requirements.
-- Platform conventions.
+```text
+$frontend-design-loop
 
-The Skills should inspect these automatically where possible. Explicitly mention important rules that are not represented in files.
+Mode: FULL_PRODUCT_UX.
+Inspect [product/page], create an Art Direction Brief if visual changes are requested,
+audit the important user journeys, implement the approved scope, and run separate
+visual and interaction verification.
+```
 
-## 5. Reference screenshots and websites
+## 7. Role boundaries
 
-Provide the screenshot or URL and say what you want to learn:
-- Composition.
-- Typography.
-- Color.
-- Density.
-- Imagery.
-- Interaction.
-- Motion.
-
-The Art Director should abstract the design qualities rather than copy the entire page. Source and asset permissions still apply.
-
-## 6. Important distinction
-
-- Art Director produces a brief; it does not implement.
-- Visual Critic inspects and reports; it does not fix.
-- Design Loop orchestrates implementation and review, but only writes code when the user has authorized changes.
+- Art Director defines visual direction; it does not implement.
+- Visual Critic selects the requested review mode and performs visual or interaction/product audit; it does not fix.
+- Design Loop orchestrates the chosen mode and writes only with user authorisation.
+- "Audit" or "review" does not imply permission to modify code.
