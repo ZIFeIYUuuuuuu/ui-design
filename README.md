@@ -50,7 +50,7 @@ Personal installation (available across projects):
 Project-only installation (run from the target project's root):
 
 ```bash
-/path/to/universal-frontend-design-skills/scripts/install.sh .agents/skills
+/path/to/ui-design/scripts/install.sh .agents/skills
 ```
 
 After installation, restart or refresh Codex's Skills list if the new Skills do not appear.
@@ -83,10 +83,6 @@ See [Usage Guide](docs/USAGE.md), [Installation](docs/INSTALLATION.md), and [Com
 The optional [UI Lab profile](profiles/ui-lab/PROFILE.md) connects these generic Skills to UI Lab's Design Constitution V2 and its research on Refactoring UI, design-dot, Emil Kowalski, Apple HIG, NN/g, WCAG, GOV.UK, and web.dev.
 
 The profile is not required. Generic Skills work without it and should use the target project's own design guidelines when available.
-
-## Export to a standalone repository
-
-This package is currently staged inside the UI Lab repository for review. To publish it as its own repository, create an empty GitHub repository and copy the contents of this directory (not the parent UI Lab repository) into the new repository root. See [Migration](docs/MIGRATION.md).
 
 ## License
 
