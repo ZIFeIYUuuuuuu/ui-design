@@ -74,6 +74,10 @@ Only when implementation is authorised:
 5. Do not add retry behavior until original acceptance, idempotency, and side effects are verified.
 6. Do not run payments, purchases, subscriptions, credit-consuming operations, publishing, messaging, deletion, or irreversible actions without explicit approval for that exact test.
 
+### Carry the design decision through implementation
+
+For each authorised change, trace finding ID → intended user outcome → chosen behavior → existing component/events/state → replay path. Preserve unrelated business events and distinct state owners. Check component conflicts, dependency and license implications before using an external recipe. Implement motion only for the documented purpose, including interruption, reversal, keyboard/touch and reduced motion. An audit-only handoff carries the same decisions and alternatives as proposals and ends with the full report.
+
 ## Phase 4 — Independent verification
 
 - Visual changes: use Visual Critic in VISUAL_ONLY or FULL_PRODUCT_UX mode with current browser evidence.
@@ -82,6 +86,8 @@ Only when implementation is authorised:
 - Inspect actual behavior before reading the generator's self-review.
 - Record browser, network, server, code, and test evidence separately.
 - Mark each finding FIXED / PARTIALLY_FIXED / UNRESOLVED / REGRESSED.
+
+Follow the comparison and replay procedure in references/iteration-protocol.md for each implemented interaction. Record observed outcomes alongside the original decision and acceptance condition.
 
 ## Phase 5 — Focused refinement
 

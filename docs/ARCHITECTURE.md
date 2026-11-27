@@ -14,6 +14,10 @@ Provide three reusable Agent Skills for frontend visual design and product inter
 
 The Visual Critic contains the product-journey audit procedure. Do not create a separate fourth Skill for this capability.
 
+### Interaction design method
+
+Adapted from UI Lab's interaction design workflow, Design Decision Record and Interaction Recipe Engine. The Director specifies task, state and design trade-offs before implementation. The Critic evaluates real behavior and compares improvements. The Loop carries chosen decisions through implementation and comparable replay. Each installed Skill contains its role's instructions. Project-specific research and recipe registries are optional.
+
 ## 3. Review modes
 
 - VISUAL_ONLY

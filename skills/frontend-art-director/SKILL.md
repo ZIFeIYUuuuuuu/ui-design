@@ -98,6 +98,12 @@ Specify concept, product personality, page silhouette, visual anchor, hierarchy,
 
 Avoid vague language. Replace "premium", "modern", "beautiful", or "more polished" with observable design decisions.
 
+#### Plan the interactions that carry the task
+
+For each consequential design choice, start with the user's intention, the existing control and the cost of a mistaken action. Map trigger → state owner → visible response → next action. Specify what persists when users leave, cancel, reverse or repeat the action. Check existing components for the events, slots, focus behavior and responsive space the plan needs. Document conflicts or unknowns before proposing a new dependency.
+
+Compare the baseline with the smallest viable improvement. Include a different candidate when it would change the user's experience materially. Explain the trade-off and when keeping the baseline wins. Specify motion only when it helps users understand a relation, change or outcome. Give the origin, entry/exit, duration and easing rationale, interruption, reversal, and reduced-motion equivalent; check frequent use, touch and keyboard. Label untested designs as proposals. Attribute an external pattern only when its source was actually inspected.
+
 ### 5. Prevent generic output without banning useful patterns
 
 Check for unmotivated defaults:

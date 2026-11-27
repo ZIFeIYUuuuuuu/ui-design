@@ -49,6 +49,10 @@ A comprehensive audit provides:
 
 The executive summary may highlight the top three, but must not hide the remaining findings.
 
+## Verify the chosen interaction
+
+Replay the same task, starting data, viewport and input method used for the baseline. Compare observed feedback, steps, retained work, recovery and focus. Exercise rapid or reversed input and reduced motion when the change involves motion. Compare alternatives in-browser only if implemented and authorised. Record actual outcomes, regressions and any remaining uncertainty against the original finding ID. Preserve the baseline if an enhancement adds measurable friction without a demonstrated benefit.
+
 ## Stop rules
 
 Do not keep browsing after the declared scope is covered merely to inflate activity. Do not claim full coverage when routes or scenarios remain untested. Apply the Critic’s whole-site completion rule before handoff. Record a concrete reason for every partial or unexecuted path.

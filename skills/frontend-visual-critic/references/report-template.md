@@ -101,6 +101,13 @@ Map requested, accepted, queued, running, succeeded, failed, cancelled, persiste
 
 Separate UX recommendations from verified engineering root-cause fixes.
 
+### Interaction decisions
+
+| Finding / path | Intent and observed cost | Change now / defer / retain, and why | Current behavior and viable options | Selected behavior, trade-off and uncertainty | Replay / acceptance |
+|---|---|---|---|---|---|
+
+Use concise rows for straightforward fixes. For material choices, describe state ownership, continuity, feedback and recovery, input methods, and any motion or static equivalent. Keep evidence from the current run distinct from predicted results.
+
 ## 12. Regression Plan
 | Test ID | Scenario | Setup | Steps | Expected result | Side-effect guard |
 |---|---|---|---|---|---|
