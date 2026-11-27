@@ -18,6 +18,8 @@ The Visual Critic contains the product-journey audit procedure. Do not create a 
 
 Adapted from UI Lab's interaction design workflow, Design Decision Record and Interaction Recipe Engine. The Director specifies task, state and design trade-offs before implementation. The Critic evaluates real behavior and compares improvements. The Loop carries chosen decisions through implementation and comparable replay. Each installed Skill contains its role's instructions. Project-specific research and recipe registries are optional.
 
+Each standalone Skill ships the same behavior router, short menus and individual case files. Start from the action and decision, open one menu, then read the matching case. Read a second case only for a material competing interpretation. The flat index remains available for keyword lookup. Carry the case ID and observation through handoff; a different task on the same component may require a different case.
+
 ## 3. Review modes
 
 - VISUAL_ONLY

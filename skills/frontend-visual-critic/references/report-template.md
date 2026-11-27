@@ -54,7 +54,7 @@ Allowed results: PASS / FAIL / BLOCKED / NOT_TESTED / NOT_APPLICABLE. Never coun
 
 ### Component and state coverage
 
-| Component / group and route | Input sequence and simultaneous states | Visible cue and behavior | Rule ID / inference | Evidence, disposition or reason untested |
+| Component / group and route | Input sequence and simultaneous states | Visible cue and behavior | Case ID and applicable condition / original inference | Evidence, disposition or reason untested |
 |---|---|---|---|---|
 
 ## 6. State and Cross-Layer Analysis
