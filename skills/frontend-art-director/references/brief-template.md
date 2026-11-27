@@ -38,6 +38,7 @@
 - What must not be copied:
 
 ## 5. Composition and Hierarchy
+- For each consequential choice, identify the control, moment of need, location and relative emphasis. Explain what a plausible alternative would gain or cost here and what the design should preserve.
 - Page silhouette:
 - Visual anchor:
 - Primary / secondary / supporting content:

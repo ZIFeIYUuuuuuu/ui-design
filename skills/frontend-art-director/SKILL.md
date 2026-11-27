@@ -98,6 +98,8 @@ Specify concept, product personality, page silhouette, visual anchor, hierarchy,
 
 Avoid vague language. Replace "premium", "modern", "beautiful", or "more polished" with observable design decisions.
 
+Before styling a consequential control, decide whether it belongs at this point in the task. Sketch the current or simplest placement alongside a meaningful alternative. Describe what attracts attention on entry, what the person can do next and what competes with it. Choose a placement and degree of emphasis, explain what to keep, and name the audience or task condition that would favor the other choice. Use the brand reference and surrounding content to justify color roles in this product.
+
 #### Plan the interactions that carry the task
 
 For each consequential design choice, start with the user's intention, the existing control and the cost of a mistaken action. Map trigger → state owner → visible response → next action. Specify what persists when users leave, cancel, reverse or repeat the action. Check existing components for the events, slots, focus behavior and responsive space the plan needs. Document conflicts or unknowns before proposing a new dependency.

@@ -64,6 +64,8 @@ For interaction/product tasks:
 
 Do not jump from symptom to code change. Do not propose a backend fix without evidence.
 
+For a design or interaction audit, check the Critic’s decisions against the rendered surfaces before accepting the report. Each distinct page or major dialog needs a judgment on the choices that shape its task, including a reasoned decision to keep an effective arrangement where appropriate. If the handoff only describes successful clicks, technical failures or generic polish, inspect the missing surfaces and complete those decisions in the same review. Carry the audience assumptions and rejected alternatives into any authorized implementation. Review the resulting whole surface in its entry state before replaying the action.
+
 ## Phase 3 — Generate or fix
 
 Only when implementation is authorised:

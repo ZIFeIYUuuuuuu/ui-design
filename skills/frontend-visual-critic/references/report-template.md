@@ -24,6 +24,13 @@
 - Scenarios: PASS / FAIL / BLOCKED / NOT_TESTED / NOT_APPLICABLE
 - One-sentence conclusion:
 
+### Design decisions in context
+
+For each distinct reviewed surface in design or interaction scope, account for the choices that shape the experience. Reference shared decisions across equivalent surfaces. Include what works and why. A successful replay alone leaves the design decision open.
+
+| Surface, task and control | First impression and visible evidence in context | Keep or change, exact placement or treatment | Why this fits better here, trade-off and condition for reconsidering | Relevant case or reviewer inference |
+|---|---|---|---|---|
+
 ## 3. Product and Route Inventory
 | Area / route | User role | Purpose | Entry point | Next step / exit | Inspected? | Limitation |
 |---|---|---|---|---|---|---|
