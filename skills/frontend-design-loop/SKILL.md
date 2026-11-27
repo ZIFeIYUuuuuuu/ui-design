@@ -78,7 +78,7 @@ Only when implementation is authorised:
 
 For each authorised change, trace finding ID → intended user outcome → chosen behavior → existing component/events/state → replay path. Preserve unrelated business events and distinct state owners. Check component conflicts, dependency and license implications before using an external recipe. Implement motion only for the documented purpose, including interruption, reversal, keyboard/touch and reduced motion. An audit-only handoff carries the same decisions and alternatives as proposals and ends with the full report.
 
-Trace component-level changes to the matching rule and its applicability in references/component-rule-index.md. Inspect the real hit region, handler, state owner and visual tokens before changing implementation. Replay nested/group transitions, pressed versus committed feedback, keyboard focus, pointer exit and reduced motion where applicable. Include before/after evidence of the same state combination and preserve successful neighboring controls.
+Carry forward the chosen case, applicability, rejected option, replay and baseline observation from the brief or audit. Use references/behavior-router.md only when this evidence is missing or a precondition changes. Replay before and after using comparable inputs. Inspect the real hit region, handler, state owner and visual tokens before changing implementation. Replay nested/group transitions, pressed versus committed feedback, keyboard focus, pointer exit and reduced motion where applicable. Include before/after evidence of the same state combination and preserve successful neighboring controls.
 
 ## Phase 4 — Independent verification
 

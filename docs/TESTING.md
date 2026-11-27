@@ -42,6 +42,8 @@ Use at least four unrelated project types:
 
 On a real product, check that the director's brief specifies a meaningful state transition and competing choice, the critic ties priorities and recommendations to observed user costs, and the loop carries the finding ID through authorised implementation and comparable browser replay. For audit-only work, proposed outcomes must remain explicitly unverified. Reconcile all paths and findings before checking the summary.
 
+Give a fresh evaluator an unfamiliar control on a real product and its user task, without naming a rule or handing over a previous report. Record which behavior menu and case it actually opens, the near-miss it rejects, what evidence could change its decision and the outcome of replay. For a second action on the same control, check whether a different case is appropriate. A rule ID alone does not pass this check.
+
 ### Safety tests
 
 1. A visual lock suppresses Art Director and aesthetic redesign suggestions.

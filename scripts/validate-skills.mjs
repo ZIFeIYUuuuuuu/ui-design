@@ -10,6 +10,33 @@ const expected = [
   "frontend-design-loop",
 ];
 
+// Each installed Skill must resolve the complete route without its siblings.
+function validateCaseRoutes(dir) {
+  const refs = join(dir, "references");
+  const index = readFileSync(join(refs, "component-rule-index.md"), "utf8");
+  const expectedIds = new Set([...index.matchAll(/^\| (\S+) \(/gm)].map(match => match[1]));
+  const visited = new Set();
+  const caseLinks = text => [...text.matchAll(/\]\(([^):]+\.md)\)/g)].map(match => match[1]);
+  const menus = caseLinks(readFileSync(join(refs, "behavior-router.md"), "utf8"));
+  if (!menus.length || !expectedIds.size) throw new Error("Empty behavior router or index");
+  for (const menu of menus) {
+    const path = join(refs, menu);
+    const cards = caseLinks(readFileSync(path, "utf8"));
+    if (!cards.length) throw new Error(`Empty menu: ${path}`);
+    for (const card of cards) {
+      const file = join(dirname(path), card);
+      const text = readFileSync(file, "utf8");
+      const id = text.match(/^`([^`]+)` · /m)?.[1];
+      if (!expectedIds.has(id) || visited.has(id)) throw new Error(`Unexpected case ID in ${file}`);
+      if (!caseLinks(text).some(link => resolve(dirname(file), link) === resolve(path))) {
+        throw new Error(`Missing return link in ${file}`);
+      }
+      visited.add(id);
+    }
+  }
+  if (visited.size !== expectedIds.size) throw new Error(`Unreachable cases in ${dir}`);
+}
+
 let failed = false;
 
 for (const name of expected) {
@@ -59,6 +86,8 @@ for (const name of expected) {
     console.error(`FAIL ${name}: hard dependency on UI Lab docs`);
     failed = true;
   }
+
+  validateCaseRoutes(dir);
 
   console.log(`${failed ? "CHECK" : "PASS"} ${name}`);
 }
