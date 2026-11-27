@@ -73,6 +73,14 @@ For each journey in scope, define:
 
 Then execute the plan with the available real browser and permitted tools.
 
+### Whole-site completion rule
+
+Treat a request to review the site as a whole as product-wide, even when the user supplies only its URL. Use PRODUCT_JOURNEY for interaction scope and FULL_PRODUCT_UX when visual assessment is also in scope. Keep an explicitly named page or component review local.
+
+Maintain a live checklist of distinct user paths reachable from in-scope navigation, dialogs, controls and workflow branches for the available roles. Include meaningful input, viewport, return and recovery variants. Group equivalent items only when they expose the same behavior and record the grouping. Add paths discovered while testing. For each path, execute permitted steps through its outcome or first concrete blocker. Capture expected and observed behavior and link evidence to that path. If one branch fails or reaches a paid, unsafe or unavailable step, continue with independent branches.
+
+Before delivering, reconcile the inventory against the checklist. Continue in the same request while any discovered, in-scope scenario is executable. For each unexecuted or partial path give the specific reason, last verified step and remaining outcome. A quota of findings, a representative sample or a planned second round cannot close the audit. Deliver the full coverage matrix and every distinct supported finding together in one report; the summary may highlight priorities.
+
 For each action, record:
 - Route and visible state before action.
 - Exact action performed.

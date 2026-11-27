@@ -6,7 +6,7 @@
 |---|---|---|---|
 | Create or redesign a page | VISUAL_DESIGN | Yes | VISUAL_ONLY after render |
 | "Keep visual style; improve interaction" | INTERACTION_IMPROVEMENT | No | INTERACTION_ONLY / PRODUCT_JOURNEY |
-| Audit whole product UX | AUDIT_ONLY or FULL_PRODUCT_UX | Only if visual audit requested | PRODUCT_JOURNEY |
+| Audit whole product UX | AUDIT_ONLY | No | FULL_PRODUCT_UX, or PRODUCT_JOURNEY for interaction scope |
 | Visual and business workflow redesign | FULL_PRODUCT_UX | If visual direction changes | Separate visual and journey passes |
 
 Explicit user constraints override default routing. Never invoke Art Director for an interaction-only request with a visual lock.
@@ -51,4 +51,4 @@ The executive summary may highlight the top three, but must not hide the remaini
 
 ## Stop rules
 
-Do not keep browsing after the declared scope is covered merely to inflate activity. Do not claim full coverage when routes or scenarios remain untested. State the remaining gaps and the safest next diagnostic step.
+Do not keep browsing after the declared scope is covered merely to inflate activity. Do not claim full coverage when routes or scenarios remain untested. Apply the Critic’s whole-site completion rule before handoff. Record a concrete reason for every partial or unexecuted path.

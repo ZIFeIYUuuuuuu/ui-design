@@ -29,6 +29,8 @@ Do NOT invoke this Skill when the user asks only to:
 
 If the user explicitly says "do not change the visual style", "interaction only", "keep the current look", or equivalent, respect that boundary. Do not sneak in art direction as a preliminary step.
 
+For a review of an existing site, hand the original scope and constraints to frontend-visual-critic. A visual review belongs to the Critic even when this Skill was mentioned. Produce a brief when the user also requests a new design direction.
+
 ## Operating principles
 
 - Product and user task come before aesthetic fashion.
