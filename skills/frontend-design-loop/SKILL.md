@@ -48,7 +48,7 @@ Do not invoke Art Director. Use Visual Critic in INTERACTION_ONLY or PRODUCT_JOU
 Use Art Director only if a new or changed visual direction is actually requested. Run visual and interaction reviews as separate workstreams and keep their findings distinct.
 
 ### AUDIT_ONLY
-Inspect and report. Do not modify code, configuration, data, or accounts.
+Route a whole-site audit to Visual Critic in PRODUCT_JOURNEY or FULL_PRODUCT_UX according to the requested scope. Carry over the original roles, constraints and full site scope. Apply the Critic’s whole-site completion rule and return its complete findings and coverage together in this request. Implementation budgets apply only to fixes. Finish after the report.
 
 ## Phase 2 — Audit before fixing
 

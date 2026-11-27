@@ -47,7 +47,7 @@
 - Not tested:
 
 ## 5. Scenario Coverage
-| Scenario | Planned | Executed | Result | Evidence | Limitation |
+| Path / scenario ID | Steps executed through | Expected / observed | Result | Evidence / finding IDs | Reason and remaining steps if incomplete |
 |---|---|---|---|---|---|
 
 Allowed results: PASS / FAIL / BLOCKED / NOT_TESTED / NOT_APPLICABLE. Never count BLOCKED or NOT_TESTED as PASS.

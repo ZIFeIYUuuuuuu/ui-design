@@ -35,7 +35,8 @@ Use at least four unrelated project types:
 5. Cross-layer state inconsistency is traced using IDs, timestamps, request/event/persistence evidence where available.
 6. Root causes are not asserted without direct evidence.
 7. Coverage matrix distinguishes PASS, FAIL, BLOCKED, NOT_TESTED, NOT_APPLICABLE.
-8. Complete findings are reported; top three are only an executive summary.
+8. On a real site, follow branches discovered during the audit. When a branch reaches a prohibited operation, verify that other executable branches still run in the same request.
+9. Compare the discovered paths against the final coverage matrix. Every partial or unexecuted path identifies its blocker and remaining steps. All supported findings appear together, including any beyond the top three.
 
 ### Safety tests
 
