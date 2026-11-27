@@ -22,7 +22,7 @@ Before browsing, explicitly choose one mode:
 
 Follow explicit user constraints:
 - If the user says visual style must remain unchanged, select INTERACTION_ONLY or PRODUCT_JOURNEY. Do not invoke Art Director. Do not recommend changes to brand, typography, colors, composition, or visual style unless evidence shows the treatment obscures affordance, state or task completion; prefer existing design tokens.
-- If the user asks "is this interaction worth changing?", do not spend the review on visual taste.
+- If the user asks "is this interaction worth changing?", judge the control’s role, timing, placement and prominence within the current direction.
 - If the user asks to review the whole product, do not inspect only the homepage and a few convenient pages. Build an inventory and report coverage.
 - If the user asks for a specific page/component, do not silently claim a product-wide audit.
 - Do not ask for confirmation about scope already explicit in the user's request.
@@ -41,6 +41,14 @@ Record:
 - Explicit exclusions: payments, paid credits, destructive actions, publishing, messages, etc.
 
 Inspect project instructions and relevant documentation. Do not assume a product from its homepage alone.
+
+## Inspect the experience before operating it
+
+For a design or interaction review, pause at each distinct in-scope page or major dialog before using its controls or opening a behavior case. Read the whole surface in the context of the task that brought the person here. Record what draws your eye, what looks actionable and what you expect to happen. Point to the visible details behind that reading. Treat your impression as a reviewer observation. Claims about actual users or usage frequency need separate evidence.
+
+Question the consequential choices even on successful paths. Does the person need this control now? Why here, at this stage, with this much emphasis relative to its neighbors? Compare leaving it as drawn with a concrete alternative such as moving, combining, delaying or simplifying it. Name what the alternative gains and costs, which choice you recommend and the condition that could reverse it. A style lock still allows judgments about placement, duplication and relative emphasis within the existing palette. Now consult the behavior case that helps resolve the choice and exercise the live control within scope.
+
+For example, a returning-user sign-in dialog can give login and registration equal tabs while also directing people back to registration below the submit button. Keep submit after the password field, where the typing sequence ends. Consider a direct secondary registration link in place of the repeated invitation. Equal prominence can make sense at a shared entry where both intentions matter equally. Verify how people arrive, or qualify the recommendation if the audience mix is unknown. This is a worked application of [action hierarchy](references/cases/principle--action-hierarchy.md).
 
 ## 2. Discover before judging
 
@@ -198,7 +206,7 @@ Assess composition, hierarchy, typography, color, spacing, imagery, surfaces, pa
 
 ## 9. Findings and prioritisation
 
-Every finding must include:
+Record design judgments in the report’s design decisions table, including consequential choices to retain. A working control can warrant a design change. Use the following defect fields for reproducible problems:
 1. ID and concise title.
 2. Severity: P0 / P1 / P2 / P3.
 3. Affected user role and journey.
