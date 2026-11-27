@@ -21,7 +21,7 @@ Before browsing, explicitly choose one mode:
 - **FULL_PRODUCT_UX** — both visual review and product interaction review, with separate findings and conclusions.
 
 Follow explicit user constraints:
-- If the user says visual style must remain unchanged, select INTERACTION_ONLY or PRODUCT_JOURNEY. Do not invoke Art Director. Do not recommend changes to brand, typography, colors, composition, or visual style unless a demonstrated visual defect directly blocks task completion.
+- If the user says visual style must remain unchanged, select INTERACTION_ONLY or PRODUCT_JOURNEY. Do not invoke Art Director. Do not recommend changes to brand, typography, colors, composition, or visual style unless evidence shows the treatment obscures affordance, state or task completion; prefer existing design tokens.
 - If the user asks "is this interaction worth changing?", do not spend the review on visual taste.
 - If the user asks to review the whole product, do not inspect only the homepage and a few convenient pages. Build an inventory and report coverage.
 - If the user asks for a specific page/component, do not silently claim a product-wide audit.
@@ -182,6 +182,15 @@ Apply this step across the complete path inventory. Probe meaningful branches th
 For each supported finding give a disposition: change now, defer pending specific evidence, or retain the behavior with a reason. Rank by observed task cost (lost work, blockage, extra steps), recoverability and known reach; label unknown frequency and assumptions. Include worthwhile opportunities and strengths discovered on successful paths. Record all findings even when deferred.
 
 For significant decisions, compare the current behavior with the smallest compatible change and a genuinely different option if useful. Explain who benefits, the trade-off, the reason to reject an option, and the condition that would change the choice. Describe the proposed before/action/after behavior, feedback, recovery, keyboard/touch and reduced-motion behavior where relevant. Match an existing component or pattern by its actual capabilities and conflicts. Use motion only for a specific perceptual purpose; address interruption, reversal and repeated use. Distinguish observed behavior, source-grounded reasoning and untested proposals. Never report a proposed alternative as browser-verified. Link each decision and replay path to finding IDs; simple issues can use a single sentence.
+
+### Inspect the control itself in interaction and journey reviews
+
+Alongside route coverage, inventory distinct interactive components and related groups along each path. Include nested controls and variants with different behavior. Group repeated instances only when their behavior matches. For a single component request, inspect that component in its surrounding task. Consult references/component-rule-index.md for applicable rules and counterexamples by role, trigger and capability. Give the rule ID or identify an original inference. Evaluate the control even when its business action succeeds.
+
+- Compare idle, hover, keyboard focus, pressed, selected, disabled and asynchronous states that exist. Exercise combinations such as selected A with pointer over B. Observe text, icon, indicator, fill, border and contrast on the actual background. Note non-color cues and what remains visible on touch. A brand lock preserves the palette while permitting evaluation of state legibility and hierarchy.
+- For grouped targets, cross A → B → outside and back quickly. Check flicker, overlay continuity, independent selection and nested hit areas. For drag or tilt, probe inside/outside boundaries, scroll conflict, release, cancellation and a non-pointer path.
+- For motion, check immediate input acknowledgement separately from confirmed business success. Replay rapid reversal and reduced motion. Inspect whether pointer-driven updates or loops continue even when CSS transitions stop. Claim timing, contrast or performance measurements only when actually measured.
+- Record component, trigger/sequence, observed visual response, relevant rule, decision and evidence or concrete gap in the same report. Keep proportionate evidence for successful controls too. Extend the existing whole-site completion rule to executable component-state paths.
 
 ## 8. Visual review (only when requested or in FULL_PRODUCT_UX)
 

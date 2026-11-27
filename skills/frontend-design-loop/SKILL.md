@@ -78,6 +78,8 @@ Only when implementation is authorised:
 
 For each authorised change, trace finding ID → intended user outcome → chosen behavior → existing component/events/state → replay path. Preserve unrelated business events and distinct state owners. Check component conflicts, dependency and license implications before using an external recipe. Implement motion only for the documented purpose, including interruption, reversal, keyboard/touch and reduced motion. An audit-only handoff carries the same decisions and alternatives as proposals and ends with the full report.
 
+Trace component-level changes to the matching rule and its applicability in references/component-rule-index.md. Inspect the real hit region, handler, state owner and visual tokens before changing implementation. Replay nested/group transitions, pressed versus committed feedback, keyboard focus, pointer exit and reduced motion where applicable. Include before/after evidence of the same state combination and preserve successful neighboring controls.
+
 ## Phase 4 — Independent verification
 
 - Visual changes: use Visual Critic in VISUAL_ONLY or FULL_PRODUCT_UX mode with current browser evidence.
