@@ -68,6 +68,8 @@
 
 For each material interaction, record the task and baseline, control/event and state owner, feedback and return/undo behavior, existing component fit, selected option and rejected alternative with reasons. Include motion or a static treatment, input alternatives and a browser acceptance path.
 
+For significant controls, include the hit region, nested target, simultaneous states, color and non-color cues, applicable rule ID, exception and input replay.
+
 ## 8. Responsive Strategy
 - Wide desktop:
 - Narrow desktop / tablet:

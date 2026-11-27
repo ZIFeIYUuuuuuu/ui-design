@@ -104,6 +104,8 @@ For each consequential design choice, start with the user's intention, the exist
 
 Compare the baseline with the smallest viable improvement. Include a different candidate when it would change the user's experience materially. Explain the trade-off and when keeping the baseline wins. Specify motion only when it helps users understand a relation, change or outcome. Give the origin, entry/exit, duration and easing rationale, interruption, reversal, and reduced-motion equivalent; check frequent use, touch and keyboard. Label untested designs as proposals. Attribute an external pattern only when its source was actually inspected.
 
+For an individual component or related group, consult references/component-rule-index.md by semantic role and input. Map hit regions and nested actions. Specify transient hover, press and keyboard focus separately from selection, saved state or failure. Define which text, icon, fill, border or indicator communicates each state, including selected A while hovering B. Share an indicator only for a genuinely exclusive group; give independent actions their own feedback. For a moving surface, name its trigger, origin, group exit and interruption. Record the matching rule ID, its limits and why a static treatment or an enhancement fits.
+
 ### 5. Prevent generic output without banning useful patterns
 
 Check for unmotivated defaults:
