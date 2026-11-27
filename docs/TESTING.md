@@ -38,6 +38,10 @@ Use at least four unrelated project types:
 8. On a real site, follow branches discovered during the audit. When a branch reaches a prohibited operation, verify that other executable branches still run in the same request.
 9. Compare the discovered paths against the final coverage matrix. Every partial or unexecuted path identifies its blocker and remaining steps. All supported findings appear together, including any beyond the top three.
 
+### Interaction decision acceptance
+
+On a real product, check that the director's brief specifies a meaningful state transition and competing choice, the critic ties priorities and recommendations to observed user costs, and the loop carries the finding ID through authorised implementation and comparable browser replay. For audit-only work, proposed outcomes must remain explicitly unverified. Reconcile all paths and findings before checking the summary.
+
 ### Safety tests
 
 1. A visual lock suppresses Art Director and aesthetic redesign suggestions.

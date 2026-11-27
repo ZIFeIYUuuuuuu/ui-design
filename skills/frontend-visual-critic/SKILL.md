@@ -175,6 +175,14 @@ For each relevant journey, assess:
 
 Do not prescribe a visual redesign unless the selected mode permits it and evidence shows it is needed.
 
+### Decide which interactions are worth changing
+
+Apply this step across the complete path inventory. Probe meaningful branches that a successful first click can hide: existing draft versus empty input, first visit versus return, switching context, repeated input, dismissal, back, focus restoration and recovery. Execute only variants with real, permitted preconditions. For a meaningful control, identify user intent, trigger, state owner if known, visible feedback, continuity, and the cost of a mistake.
+
+For each supported finding give a disposition: change now, defer pending specific evidence, or retain the behavior with a reason. Rank by observed task cost (lost work, blockage, extra steps), recoverability and known reach; label unknown frequency and assumptions. Include worthwhile opportunities and strengths discovered on successful paths. Record all findings even when deferred.
+
+For significant decisions, compare the current behavior with the smallest compatible change and a genuinely different option if useful. Explain who benefits, the trade-off, the reason to reject an option, and the condition that would change the choice. Describe the proposed before/action/after behavior, feedback, recovery, keyboard/touch and reduced-motion behavior where relevant. Match an existing component or pattern by its actual capabilities and conflicts. Use motion only for a specific perceptual purpose; address interruption, reversal and repeated use. Distinguish observed behavior, source-grounded reasoning and untested proposals. Never report a proposed alternative as browser-verified. Link each decision and replay path to finding IDs; simple issues can use a single sentence.
+
 ## 8. Visual review (only when requested or in FULL_PRODUCT_UX)
 
 Assess composition, hierarchy, typography, color, spacing, imagery, surfaces, page rhythm, product identity, and craft. Do not mistake conventional design for bad design. Do not recommend decorative effects just to make a page feel more advanced.

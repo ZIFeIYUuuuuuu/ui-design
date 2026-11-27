@@ -66,6 +66,8 @@
 - Keyboard / touch alternatives:
 - Reduced-motion behavior:
 
+For each material interaction, record the task and baseline, control/event and state owner, feedback and return/undo behavior, existing component fit, selected option and rejected alternative with reasons. Include motion or a static treatment, input alternatives and a browser acceptance path.
+
 ## 8. Responsive Strategy
 - Wide desktop:
 - Narrow desktop / tablet:
